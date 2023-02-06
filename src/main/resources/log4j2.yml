@@ -1,0 +1,40 @@
+
+Configuration:
+  name: Log4j2Test
+  properties:
+    property:
+      name: LOG_PATTERN
+      value: "%date{yyyy-MM-dd HH:mm:ss.SSS}
+    %highlight{ %-5level }{FATAL=white, ERROR=red, WARN=Yellow, INFO=Green, DEBUG=Blue, TRACE=blue}
+  ----  [%thread]   %style{%-50.50logger{5.}}{Cyan} - %msg%n"
+  appenders:
+    Console:
+      name: Console
+      target: SYSTEM_OUT
+      PatternLayout:
+        Pattern: ${LOG_PATTERN}
+
+  Loggers:
+    AsyncLogger:
+      -
+        name: org.mybatis
+        level: info
+        additivity: false
+        AppenderRef:
+          ref: Console
+      -
+        name: org.springframework
+        level: info
+        additivity: false
+        AppenderRef:
+          ref: Console
+      -
+        name: icu.xiaobai
+        level: debug
+        additivity: false
+        AppenderRef:
+          ref: Console
+    Root:
+      level: info
+      AppenderRef:
+        ref: Console

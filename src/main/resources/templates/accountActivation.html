@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+            background-color: white;
+            border: 2px solid black;
+            margin: 10px;
+            width: 600px;
+            min-width: 600px;
+        }
+
+        .container header {
+            text-align: center;
+        }
+
+        .container header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: rgb(95, 103, 100);
+            margin: 30px 0
+        }
+
+        .container header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgb(95, 103, 100);
+            margin-bottom: 18px;
+        }
+
+        .content {
+            font-size: 1rem;
+            padding: 40px;
+        }
+
+        .content p {
+            line-height: 1.4em;
+            margin: 10px 0;
+        }
+
+        .content div {
+            padding-bottom: 18px;
+        }
+
+        .reset-link {
+            display: block;
+            text-decoration: none;
+            background-color: rgb(26, 131, 222);
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 6px;
+            color: white;
+            font-size: 16px;
+            letter-spacing: 1px;
+            /* margin-left: 20px; */
+        }
+
+        .line {
+            border: none;
+            height: 2px;
+            background-color: rgb(183, 174, 174);
+            margin: 0 5px;
+        }
+
+        .reset-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <title>账户激活</title>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1>常州大学图书馆</h1>
+        <h3>账户激活</h3>
+    </header>
+    <hr class="line">
+    <main class="content">
+        <div>
+            <p>你好！</p>
+            <p>你需要通过下方链接来激活你的账户。请注意，该链接的有效时间为30分钟。</p>
+        </div>
+        <div class="reset-wrapper">
+            <a th:href="${accountActivationUrl}" class="reset-link">账号激活</a>
+        </div>
+
+        <div>
+            <p>如果这不是你本人在操作，请忽略该邮件或者联系我们。</p>
+            <p>你不用为你的隐私泄露而担忧，我们会定期删除未激活的账户。</p>
+        </div>
+
+    </main>
+</div>
+</body>
+
+</html>

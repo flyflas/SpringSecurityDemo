@@ -1,0 +1,40 @@
+logging:
+  config: classpath:log4j2.yml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/book
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      lettuce:
+       pool:
+          min-idle: 0
+          max-active: 8
+          max-idle: 8
+          max-wait: 100
+      database: 0
+      timeout: 3000
+      password: password
+  mail:
+    host: smtp.xiaobai.icu
+    username: manage@xiaobai.icu
+    password: bcJdGD3;bkd6='9vn%A(
+    reset-password-url: http://localhost:8080/reset/password/
+    account-activation-url: http://localhost:8080/account/signup/
+
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+
+
+
+
+
+
